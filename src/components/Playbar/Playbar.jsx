@@ -2,20 +2,15 @@ import { useContext, useState, useEffect } from "react";
 import { AudioContext } from "../../context/AudioContext";
 import style from "./playbar.module.scss";
 import { Slider, IconButton } from "@mui/material";
-import { Pause, PlayArrow } from "@mui/icons-material";
+import { Pause, PlayArrow, SkipNext } from "@mui/icons-material";
 import secondsToMMSS from "../../utils/secondsToMMSS";
 
 const TimeControls = () => {
-  const { audio, currentTrack } = useContext(AudioContext);
-
+  const { audio, currentTrack, handleNextTrack } = useContext(AudioContext);
   const { duration } = currentTrack;
-
   const [currentTime, setCurrentTime] = useState(0);
-
   const formattedCurrentTime = secondsToMMSS(currentTime);
-
   const sliderCurrentTime = Math.round((currentTime / duration) * 100);
-
   const handleChangeCurrentTime = (_, value) => {
     const time = Math.round((value / 100) * duration);
 
@@ -33,6 +28,18 @@ const TimeControls = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleEnded = () => {
+      handleNextTrack();
+    };
+
+    audio.addEventListener("ended", handleEnded);
+
+    return () => {
+      audio.removeEventListener("ended", handleEnded);
+    };
+  }, [audio, handleNextTrack]);
+
   return (
     <>
       <p>{formattedCurrentTime}</p>
@@ -48,7 +55,7 @@ const TimeControls = () => {
 };
 
 const Playbar = () => {
-  const { currentTrack, handleToggleAudio, isPlaying } =
+  const { currentTrack, handleToggleAudio, handleNextTrack, isPlaying } =
     useContext(AudioContext);
 
   const { title, artists, preview, duration } = currentTrack;
@@ -60,6 +67,9 @@ const Playbar = () => {
       <img className={style.preview} src={preview} alt="" />
       <IconButton onClick={() => handleToggleAudio(currentTrack)}>
         {isPlaying ? <Pause /> : <PlayArrow />}
+      </IconButton>
+      <IconButton onClick={handleNextTrack}>
+        <SkipNext />
       </IconButton>
       <div className={style.credits}>
         <h4>{title}</h4>

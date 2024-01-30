@@ -28,6 +28,18 @@ export default function MainPage() {
 
   return (
     <>
+      <div className={style.header}>
+        <img src="src\assets\images\500x500.jpg" alt="" />
+        <div className={style.textElements}>
+          <h1>Midnights (The Till Dawn Edition)</h1>
+          <p>Taylor Swift</p>
+          <div className={style.headerText}>
+            <p>POP</p>
+            <p>2022</p>
+            <p>Lossless</p>
+          </div>
+        </div>
+      </div>
       <div className={style.search}>
         <Input
           className={style.input}
