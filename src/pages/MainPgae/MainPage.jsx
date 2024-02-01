@@ -29,7 +29,10 @@ export default function MainPage() {
   return (
     <>
       <div className={style.header}>
-        <img src="src\assets\images\500x500.jpg" alt="" />
+        <img
+          src="https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true"
+          alt=""
+        />
         <div className={style.textElements}>
           <h1>Midnights (The Till Dawn Edition)</h1>
           <p>Taylor Swift</p>
