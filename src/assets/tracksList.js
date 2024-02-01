@@ -1,7 +1,7 @@
 export default [
   {
     id: 1,
-    src: "src/assets/tracks/lavenderhaze.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/lavenderhaze.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 202,
@@ -10,7 +10,7 @@ export default [
   },
   {
     id: 2,
-    src: "src/assets/tracks/Taylor Swift - Maroon.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Maroon.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 218,
@@ -19,7 +19,7 @@ export default [
   },
   {
     id: 3,
-    src: "src/assets/tracks/Taylor Swift - Anti-Hero.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Anti-Hero.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 201,
@@ -28,7 +28,7 @@ export default [
   },
   {
     id: 4,
-    src: "src/assets/tracks/Taylor Swift - Snow On The Beach (feat. Lana Del Rey).mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Snow%20On%20The%20Beach%20(feat.%20Lana%20Del%20Rey).mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 256,
@@ -37,7 +37,7 @@ export default [
   },
   {
     id: 5,
-    src: "src/assets/tracks/Taylor Swift - You re On Your Own, Kid.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20You%20re%20On%20Your%20Own,%20Kid.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 194,
@@ -46,7 +46,7 @@ export default [
   },
   {
     id: 6,
-    src: "src/assets/tracks/Taylor Swift - Midnight Rain.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Midnight%20Rain.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 175,
@@ -55,7 +55,7 @@ export default [
   },
   {
     id: 7,
-    src: "src/assets/tracks/Taylor Swift - Question.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Question.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 210,
@@ -64,7 +64,7 @@ export default [
   },
   {
     id: 8,
-    src: "src/assets/tracks/Taylor Swift - Vigilante Shit.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Vigilante%20Shit.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 165,
@@ -73,7 +73,7 @@ export default [
   },
   {
     id: 9,
-    src: "src/assets/tracks/Taylor Swift - Bejeweled.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Bejeweled.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 194,
@@ -82,7 +82,7 @@ export default [
   },
   {
     id: 10,
-    src: "src/assets/tracks/Taylor Swift - Labyrinth.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Labyrinth.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 248,
@@ -91,7 +91,7 @@ export default [
   },
   {
     id: 11,
-    src: "src/assets/tracks/Taylor Swift - Karma.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Karma.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 205,
@@ -100,7 +100,7 @@ export default [
   },
   {
     id: 12,
-    src: "src/assets/tracks/Taylor Swift - Sweet Nothing.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Sweet%20Nothing.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 188,
@@ -109,7 +109,7 @@ export default [
   },
   {
     id: 13,
-    src: "src/assets/tracks/Taylor Swift - Mastermind.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Mastermind.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 191,
@@ -118,7 +118,7 @@ export default [
   },
   {
     id: 14,
-    src: "src/assets/tracks/Taylor Swift - The Great War.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20The%20Great%20War.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 240,
@@ -127,7 +127,7 @@ export default [
   },
   {
     id: 15,
-    src: "src/assets/tracks/Taylor Swift - Bigger Than The Whole Sky.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Bigger%20Than%20The%20Whole%20Sky.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 218,
@@ -136,7 +136,7 @@ export default [
   },
   {
     id: 16,
-    src: "src/assets/tracks/Taylor Swift - Paris.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Paris.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 196,
@@ -145,7 +145,7 @@ export default [
   },
   {
     id: 17,
-    src: "src/assets/tracks/Taylor Swift - High Infidelity.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20High%20Infidelity.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 231,
@@ -154,7 +154,7 @@ export default [
   },
   {
     id: 18,
-    src: "src/assets/tracks/Taylor Swift - Glitch.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Glitch.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 149,
@@ -163,7 +163,7 @@ export default [
   },
   {
     id: 19,
-    src: "src/assets/tracks/Taylor Swift - Would ve, Could ve, Should ve.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Would%20ve,%20Could%20ve,%20Should%20ve.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 260,
@@ -172,7 +172,7 @@ export default [
   },
   {
     id: 20,
-    src: "src/assets/tracks/Taylor Swift - Dear Reader.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Dear%20Reader.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 225,
@@ -181,7 +181,7 @@ export default [
   },
   {
     id: 21,
-    src: "src/assets/tracks/Taylor Swift - Hits Different.mp3",
+    src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20Hits%20Different.mp3",
     preview:
       "https://github.com/dansandersss/reactMusicApp/blob/master/src/assets/images/500x500.jpg?raw=true",
     duration: 234,
