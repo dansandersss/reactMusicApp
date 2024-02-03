@@ -1,18 +1,20 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useEffect, useRef } from "react";
 import tracksList from "../assets/tracksList";
 
 const defaultTrack = tracksList[0];
-const audio = new Audio(defaultTrack.src);
 
 export const AudioContext = createContext({});
 
 const useAudioPlayer = () => {
+  const audioRef = useRef(new Audio(defaultTrack.src));
   const [currentTrack, setCurrentTrack] = useState(defaultTrack);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setPlaying] = useState(false);
   const [isShuffled, setShuffled] = useState(false);
   const [shuffledTracks, setShuffledTracks] = useState([]);
   const [activeShuffle, setActiveShuffle] = useState(false);
+
+  const audio = audioRef.current;
 
   const shuffleTracks = () => {
     const shuffled = [...tracksList];
@@ -54,6 +56,7 @@ const useAudioPlayer = () => {
   const handleToggleAudio = (track) => {
     if (currentTrack.id !== track.id) {
       setCurrentTrack(track);
+      audio.src = track.src;
       setPlaying(true);
     } else {
       if (isPlaying) {
