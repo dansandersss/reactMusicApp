@@ -43,10 +43,9 @@ const useAudioPlayer = () => {
 
   const handlePrevTrack = () => {
     setCurrentIndex((prevIndex) => {
-      const prevIndexValue = prevIndex - 1;
       const newIndex =
-        prevIndexValue < 0 ? getCurrentPlaylist().length - 1 : prevIndexValue;
-
+        (prevIndex - 1 + getCurrentPlaylist().length) %
+        getCurrentPlaylist().length;
       setCurrentTrack(getCurrentPlaylist()[newIndex]);
       audio.src = getCurrentPlaylist()[newIndex].src;
       return newIndex;
@@ -54,17 +53,20 @@ const useAudioPlayer = () => {
   };
 
   const handleToggleAudio = (track) => {
-    if (currentTrack.id !== track.id) {
+    const newIndex = getCurrentPlaylist().findIndex((t) => t.id === track.id);
+
+    if (currentTrack.id !== track.id || !isPlaying) {
+      setCurrentIndex(newIndex);
       setCurrentTrack(track);
       audio.src = track.src;
       setPlaying(true);
     } else {
-      if (isPlaying) {
-        audio.pause();
-        setPlaying(false);
-      } else {
+      if (audio.paused) {
         audio.play().catch((error) => console.error(error));
         setPlaying(true);
+      } else {
+        audio.pause();
+        setPlaying(false);
       }
     }
   };
