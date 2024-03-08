@@ -85,3 +85,12 @@
     margin-bottom: 250px;
   }
 }
+
+@media (max-width: 400px) {
+  .header {
+    gap: 10px;
+    > .textElements {
+      padding: 20px 0 0 0;
+    }
+  }
+}
