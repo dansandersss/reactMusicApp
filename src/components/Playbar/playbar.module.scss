@@ -3,15 +3,17 @@
   background-color: #9340fe;
 
   width: calc(100vw - 40px);
-  height: 70px;
+  height: inherit;
 
   left: 0;
   bottom: 0;
 
   display: flex;
   align-items: center;
-  padding: 0 20px;
+  justify-content: space-between;
+  padding: 15px 20px;
   gap: 30px;
+  flex-wrap: wrap;
 
   & > .togglePlay {
     transform: scale(120%) !important;
@@ -24,6 +26,27 @@
   & * {
     color: white !important;
   }
+  > .creditDiv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  > .playbarButtons {
+    display: flex;
+    gap: 25px;
+  }
+}
+
+.midnightsAlbumStyle {
+  background-color: #9340fe !important;
+}
+
+.folkloreAlbumStyle {
+  background-color: #6a6868 !important;
+}
+
+.evermoreAlbumStyle {
+  background-color: #a1674a !important;
 }
 
 .preview {
@@ -49,5 +72,22 @@
   align-items: center;
   gap: 20px;
   flex-basis: 600px;
-  margin-left: auto;
+}
+
+@media (max-width: 500px) {
+  .playbar {
+    gap: 10px;
+
+    > .creditDiv {
+      margin: 0 auto;
+      gap: 20px;
+      > div img {
+        width: 100px;
+        height: 100px;
+      }
+    }
+    > div {
+      margin: 0 auto;
+    }
+  }
 }

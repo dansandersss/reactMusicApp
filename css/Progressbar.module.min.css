@@ -1,0 +1,1 @@
+.progressbar{width:50%;height:20px;background-color:#639;border-radius:5px;animation:progressAnimation 5s linear infinite}.canvasAutoEvents{pointer-events:auto}.canvasNoneEvents{pointer-events:none}@keyframes progressAnimation{0%{width:0%}100%{width:100%}}/*# sourceMappingURL=Progressbar.module.min.css.map */

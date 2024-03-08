@@ -1,0 +1,43 @@
+.navigation {
+  position: absolute;
+  z-index: 7;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  // pointer-events: auto;
+}
+
+.divObject {
+  opacity: 0.8;
+  color: rgb(33, 33, 33);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  > img {
+    width: 250px;
+  }
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@media (max-width: 980px) {
+  .navigation {
+    gap: 25px;
+    > .divObject {
+      > img {
+        width: 200px;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .navigation {
+    flex-wrap: wrap;
+  }
+}

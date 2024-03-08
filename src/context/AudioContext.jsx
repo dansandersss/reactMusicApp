@@ -1,23 +1,22 @@
 import React, { createContext, useState, useEffect, useRef } from "react";
-import tracksList from "../assets/tracksList";
-
-const defaultTrack = tracksList[0];
 
 export const AudioContext = createContext({});
 
 const useAudioPlayer = () => {
-  const audioRef = useRef(new Audio(defaultTrack.src));
-  const [currentTrack, setCurrentTrack] = useState(defaultTrack);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const audioRef = useRef(new Audio());
+  const [currentAlbum, setCurrentAlbum] = useState(null);
+  const [currentTrack, setCurrentTrack] = useState(null);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [isPlaying, setPlaying] = useState(false);
   const [isShuffled, setShuffled] = useState(false);
   const [shuffledTracks, setShuffledTracks] = useState([]);
   const [activeShuffle, setActiveShuffle] = useState(false);
+  const [isReady, setReady] = useState(false);
 
   const audio = audioRef.current;
 
   const shuffleTracks = () => {
-    const shuffled = [...tracksList];
+    const shuffled = [...getCurrentPlaylist()];
     for (let i = shuffled.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
@@ -30,10 +29,13 @@ const useAudioPlayer = () => {
     setActiveShuffle((prev) => !prev);
   };
 
-  const getCurrentPlaylist = () => (isShuffled ? shuffledTracks : tracksList);
+  const getCurrentPlaylist = () =>
+    isShuffled && shuffledTracks.length > 0
+      ? shuffledTracks
+      : currentAlbum.tracks;
 
   const handleNextTrack = () => {
-    setCurrentIndex((prevIndex) => {
+    setCurrentTrackIndex((prevIndex) => {
       const nextIndex = (prevIndex + 1) % getCurrentPlaylist().length;
       setCurrentTrack(getCurrentPlaylist()[nextIndex]);
       audio.src = getCurrentPlaylist()[nextIndex].src;
@@ -42,7 +44,7 @@ const useAudioPlayer = () => {
   };
 
   const handlePrevTrack = () => {
-    setCurrentIndex((prevIndex) => {
+    setCurrentTrackIndex((prevIndex) => {
       const newIndex =
         (prevIndex - 1 + getCurrentPlaylist().length) %
         getCurrentPlaylist().length;
@@ -53,12 +55,21 @@ const useAudioPlayer = () => {
   };
 
   const handleToggleAudio = (track) => {
-    const newIndex = getCurrentPlaylist().findIndex((t) => t.id === track.id);
+    const trackIndex = currentAlbum.tracks.findIndex((t) => t.id === track.id);
 
-    if (currentTrack.id !== track.id || !isPlaying) {
-      setCurrentIndex(newIndex);
+    if (trackIndex === -1) {
+      console.error("Track does not belong to current album");
+      return;
+    }
+
+    if (currentTrackIndex !== trackIndex || !isPlaying) {
+      setCurrentTrackIndex(trackIndex);
       setCurrentTrack(track);
-      audio.src = track.src;
+
+      const selectedTrack = currentAlbum.tracks[trackIndex];
+      audio.src = selectedTrack.src;
+      if (isReady) audio.play().catch((error) => console.error(error));
+      else audio.load();
       setPlaying(true);
     } else {
       if (audio.paused) {
@@ -93,19 +104,48 @@ const useAudioPlayer = () => {
     if (isPlaying) {
       audio.play().catch((error) => console.error(error));
     }
-  }, [currentTrack, isPlaying, isShuffled]);
+  }, [currentTrackIndex, isPlaying, isShuffled]);
 
   useEffect(() => {
     if (activeShuffle) {
       shuffleTracks();
     }
-  }, [activeShuffle, shuffleTracks]);
+  }, [activeShuffle]);
+
+  useEffect(() => {
+    const handleCanPlayThrough = () => {
+      setReady(true);
+      if (isPlaying) audio.play().catch((error) => console.error(error));
+    };
+
+    audio.addEventListener("canplaythrough", handleCanPlayThrough);
+
+    return () => {
+      audio.removeEventListener("canplaythrough", handleCanPlayThrough);
+    };
+  }, [audio, isPlaying]);
+
+  const stopAndReset = () => {
+    audio.pause();
+    setPlaying(false);
+    setCurrentAlbum(null);
+    setCurrentTrack(null);
+    setCurrentTrackIndex(0);
+    setShuffled(false);
+    setShuffledTracks([]);
+    setActiveShuffle(false);
+    setReady(false);
+  };
 
   return {
+    stopAndReset,
     audio,
+    currentAlbum,
+    setCurrentAlbum,
     currentTrack,
+    setCurrentTrack,
     isPlaying,
-    currentIndex,
+    currentTrackIndex,
     handleToggleAudio,
     handleNextTrack,
     handlePrevTrack,
@@ -116,10 +156,18 @@ const useAudioPlayer = () => {
 };
 
 const AudioProvider = ({ children }) => {
+  const [defaultTrack, setDefaultTrack] = useState(null);
+
   const audioPlayer = useAudioPlayer();
 
+  useEffect(() => {
+    if (audioPlayer.currentAlbum) {
+      setDefaultTrack(audioPlayer.currentAlbum.tracks[0]);
+    }
+  }, [audioPlayer.currentAlbum]);
+
   return (
-    <AudioContext.Provider value={audioPlayer}>
+    <AudioContext.Provider value={{ ...audioPlayer, defaultTrack }}>
       {children}
     </AudioContext.Provider>
   );
