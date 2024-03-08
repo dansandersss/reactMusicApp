@@ -211,7 +211,7 @@ export const folkloreAlbum = {
   tracks: [
     {
       id: 1,
-      src: "/src/assets/tracks/Taylor Swift - the 1.mp3",
+      src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20the%201.mp3",
       preview:
         "https://upload.wikimedia.org/wikipedia/ru/a/a0/Folklore_%28%D0%B0%D0%BB%D1%8C%D0%B1%D0%BE%D0%BC_%D0%A2%D0%B5%D0%B9%D0%BB%D0%BE%D1%80_%D0%A1%D0%B2%D0%B8%D1%84%D1%82%29.png",
       duration: 210,
@@ -220,7 +220,7 @@ export const folkloreAlbum = {
     },
     {
       id: 2,
-      src: "/src/assets/tracks/Taylor Swift - cardigan (2020).mp3",
+      src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/Taylor%20Swift%20-%20cardigan%20(2020).mp3",
       preview:
         "https://upload.wikimedia.org/wikipedia/ru/a/a0/Folklore_%28%D0%B0%D0%BB%D1%8C%D0%B1%D0%BE%D0%BC_%D0%A2%D0%B5%D0%B9%D0%BB%D0%BE%D1%80_%D0%A1%D0%B2%D0%B8%D1%84%D1%82%29.png",
       duration: 240,
@@ -241,7 +241,7 @@ export const evermoreAlbum = {
   tracks: [
     {
       id: 1,
-      src: "/src/assets/tracks/taylor-swift-willow_(MP3.ai).mp3",
+      src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/taylor-swift-willow_(MP3.ai).mp3",
       preview:
         "https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Taylor_Swift_-_Evermore.png/220px-Taylor_Swift_-_Evermore.png",
       duration: 216,
@@ -250,7 +250,7 @@ export const evermoreAlbum = {
     },
     {
       id: 2,
-      src: "/src/assets/tracks/taylor-swift-champagne-problems_(MP3.ai).mp3",
+      src: "https://github.com/dansandersss/reactMusicApp/raw/master/src/assets/tracks/taylor-swift-champagne-problems_(MP3.ai).mp3",
       preview:
         "https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/Taylor_Swift_-_Evermore.png/220px-Taylor_Swift_-_Evermore.png",
       duration: 245,
